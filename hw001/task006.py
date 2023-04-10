@@ -8,3 +8,17 @@
 # 123456 -> no
 
 # Решение:
+userNumber = input("Введите номер билета для определения его счастливости: ")
+size = len(userNumber)
+sumLeft = 0
+sumRight = 0
+if len(userNumber) == 6:
+    for i in range(size//2):
+       sumLeft += int(userNumber[i])
+       sumRight += int(userNumber[size-i-1])
+    if sumLeft == sumRight:
+        print("У Вас СЧАСТЛИВЫЙ билет. Поздравляю!")
+    else:
+       print("У Вас несчастливый билет. В следующий раз повезет!") 
+else:
+    print("Ваш билет не поддается расчету")

@@ -8,3 +8,7 @@
 # 60 -> 10 40 10
 
 # Решение:
+totalCranes = int(input("Введите общее кол-во сделанных журавликов: "))
+print(f"Петя сделал {totalCranes//6} жур.")
+print(f"Сережа сделал {totalCranes//6} жур.")
+print(f"Катя сделала {(totalCranes//6)*4} жур.")
