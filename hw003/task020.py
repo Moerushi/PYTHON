@@ -22,3 +22,23 @@
 # ноутбук
 # Вывод:
 # 12
+
+# Решение:
+engDictionary = {"AEIOULNSTR": 1, "DG": 2, "BCMP": 3, "FHVWY": 4, "K": 5, "JX": 8, "QZ": 10}
+rusDictionary = {"АВЕИНОРСТ": 1, "ДКЛМПУ": 2, "БГЁЬЯ": 3, "ЙЫ": 4, "ЖЗХЦЧ": 5, "ШЭЮ": 8, "ФЩЪ": 10}
+
+userWord = input("Введите слово для подсчета очков: ")
+
+result = 0
+
+for letter in userWord.upper():
+    for key, value in rusDictionary.items(): # создаем кортеж из элементов словаря
+      if letter in key: # проверяем букву слова с ключе словаря
+        result += value
+if result == 0:
+  for letter in userWord.upper():
+      for key, value in engDictionary.items(): # создаем кортеж из элементов словаря
+        if letter in key: # проверяем букву слова с ключе словаря
+          result += value
+
+print(f"Количество очков за слово \"{userWord}\" = {result}")

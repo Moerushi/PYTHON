@@ -3,3 +3,17 @@
 # больших предыдущего (элемента с предыдущим номером)
 # Input: [0, -1, 5, 2, 3] Output: 2 (-1 < 5, 2 < 3)
 # Примечание: Пользователь может вводить значения списка или список задан изначально.
+
+# Решение:
+import random
+n = int(input("Введите количество элементов: "))
+nums = []
+count = 0
+nums.append(random.randint(-10,10))
+for i in range(n-1):
+    nums.append(random.randint(-10,10))
+    if nums[i+1] > nums [i]:
+        count += 1
+
+print(nums)
+print(f"Количестов числе: {count}")

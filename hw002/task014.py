@@ -6,7 +6,7 @@
 n = int(input('Введите число, до которого необходимо рассчиать квадрат числа 2: '))
 counter = 0
 print("Ответ:", end = " ")
-while 2**counter < n:
+while 2**counter <= n:
     print(f"{2** counter}", end = " ")
     counter += 1
 print()

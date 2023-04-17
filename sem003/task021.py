@@ -3,3 +3,16 @@
 # {"VII": " S005 "}, {" V ":" S009 "}, {" VIII ":" S007 "}]
 # Output: {'S005', 'S002', 'S007', 'S001', 'S009'}
 # Примечание: Список словарей задан изначально. Пользователь его не вводит
+
+# Решение:
+someList = [{"V": "S001"}, 
+            {"V": "S002"}, 
+            {"VI": "S001"}, 
+            {"VI": "S005"}, 
+            {"VII": " S005 "}, 
+            {" V ":" S009 "}, 
+            {" VIII ":" S007 "}]
+someSet = set()
+for elems in someList:
+    someSet.add(list(elems.values())[0])
+print(someSet)
