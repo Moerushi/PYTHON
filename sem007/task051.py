@@ -13,3 +13,11 @@
 # print(‘different’)
 # Вывод:
 # same
+
+# Решение:
+same_by = lambda characteristic, objects: len(set(map(characteristic, objects))) < 2
+values = [0, 3, 10, 6] 
+if same_by(lambda x: x % 2, values):
+  print('same') 
+else:
+  print('different')

@@ -11,14 +11,17 @@ def show_menu() -> int:
           "3. Найти абонента по номеру телефона\n"
           "4. Добавить абонента в справочник\n"
           "5. Сохранить справочник в текстовом формате\n"
-          "6. Закончить работу")
+          "6. Удалить пользователя\n"
+          "7. Изменить данные пользователя\n"
+          "8. Закончить работу"
+          )
     choice = int(input())
     return choice
     
 def work_with_phonebook():
     choice = show_menu()
     phone_book = read_csv('sem008/phonebook.csv') # DONE
-    while (choice != 6):
+    while (choice != 8):
         if choice == 1:
             show_phonebook(phone_book)
         elif choice == 2:
@@ -34,6 +37,12 @@ def work_with_phonebook():
         elif choice == 5:
             file_name = 'sem008/' + get_user_input()
             write_txt(file_name, phone_book)
+        elif choice == 6:
+            delete_user(phone_book)
+            write_csv('sem008/phonebook.csv', phone_book)
+        elif choice == 7:
+            change_userdata(phone_book)
+            write_csv('sem008/phonebook.csv', phone_book)
         choice = show_menu()
 
 def read_csv(filename: str) -> list:
@@ -106,5 +115,21 @@ def write_csv(filename: str, data: list):
             for v in data[i].values():
                 s += v + ','
             fout.write(f'{s[:-1]}\n')
+
+def delete_user(phone_book):
+    user = input('Введите фамилию абонента, которого необходимо удалить: ')
+    for elem in phone_book:
+        for v in elem.values():
+            if v == user:
+                phone_book.remove(elem)
+
+def change_userdata(phone_book):
+    user = input('Введите имя пользователя, чьи данные необходимо изменить: ')
+    changed_atr = input('Введите изменяемый параметр: ')
+    new_atr = input('Введите новое значение параметра: ')
+    for elem in phone_book:
+        for v in elem.values():
+            if v == user:
+                elem[changed_atr] = new_atr
 
 work_with_phonebook()

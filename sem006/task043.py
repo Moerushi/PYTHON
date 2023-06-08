@@ -8,3 +8,13 @@
 # 12323
 # Вывод:
 # 2
+
+# Решение:
+someList = [1, 2, 1, 4, 5, 2]
+print(someList)
+count = 0
+
+for i in set(someList):
+  count += someList.count(i)//2
+
+print(f"Число повторяющихся парных значений: {count}")

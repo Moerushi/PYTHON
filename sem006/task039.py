@@ -13,4 +13,13 @@
 # Вывод:
 # 3 3 2 12
 
-# Решение:
+# Решение: 
+firstList = input('Введите числа первого массива: ').split()
+secondList = input('Введите числа второго массива: ').split()
+resultList = []
+
+for i in firstList:
+    if i not in secondList:
+        resultList.append(i)
+
+print("Неповторяющиеся значения из первого списка:", *resultList)

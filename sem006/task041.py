@@ -9,3 +9,14 @@
 # 1 2 3 4 5
 # Вывод:
 # 0
+
+# Решение:
+
+someList = list(map(int,input("Введите через пробел числа: ").split()))
+counter = 0
+
+for i in range(1,len(someList)-1):
+    if someList[i+1] < someList[i] > someList[i-1]:
+        counter += 1
+
+print(f"Ваш результат: {counter}")
